@@ -12,6 +12,18 @@ The usual
 ## Running
 
 
+```perl6
+use Sys::Chown;
+#Taken verbatim from File::Chown
+
+# chown by user-/group names
+chown "ujang", "ujang", @files;
+# numeric ID's still work
+chown -1, 500, "myfile.txt";
+# option: use a reference file's owner/group instead of specifying directly,
+ # like the Unix chown command's --reference=FILE.
+chown({ref => "/etc/passwd"}, "mypasswd");
+```
 ## See also
 
 <-- Related stuff -->

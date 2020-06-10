@@ -3,6 +3,7 @@ unit module Sys::Chown;
 use P5getpwnam;
 use P5getgrnam;
 use UNIX::Privileges :USER;
+use File::Stat <stat>;
 
 subset Valid-User of Str:D where userinfo($_).uid.defined;
 subset Valid-Group of Str:D where groupinfo($_).gid.defined;
@@ -27,4 +28,9 @@ multi sub chown ( @files,
         UNIX::Privileges::chown(getpwuid($uid)[0], getgrgid($gid)[0], $f);
     }
     so all @result;
+}
+
+multi sub chown (@files, IO::Path $file where .e ) {
+    my $stat = stat($file.path);
+    chown( @files, $stat.uid, $stat.gid);
 }

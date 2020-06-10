@@ -19,3 +19,12 @@ multi sub chown ( @files,
     so all @result;
 }
 
+multi sub chown ( @files,
+                  UInt $uid,
+                  UInt $gid = userinfo(getpwuid($uid)[0]).gid )
+        is export {
+    my @result = do for @files -> $f {
+        UNIX::Privileges::chown(getpwuid($uid)[0], getgrgid($gid)[0], $f);
+    }
+    so all @result;
+}

@@ -6,6 +6,7 @@
   "auth": "github:JJ",
   "depends": [
     "P5getpwnam",
+    "P5getgrnam",
     "UNIX::Privileges"
   ],
   "provides": {

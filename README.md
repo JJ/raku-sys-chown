@@ -1,18 +1,16 @@
-# Raku Distribution Template
+# Sys::Chown
 
-Template for Raku modules, classes, roles, to be distributed as a
-single package in the ecosystem. Fill this README with your
-instructions.
+A port of [Perl's File::Chown](https://github.com/perlancar/perl-File-chown
+) to Raku, using [Lizmat's Butterfly project](https://modules.raku.org/dist/P5built-ins:cpan:ELIZABETH)
 
 ## Installing
 
+The usual
 
-<-- Fill your prerequisites here, how to install using zef, how to
-install from source -->
+    zef install Sys::Chown
 
 ## Running
 
-<-- Some examples, or pointing to a directory with them -->
 
 ## See also
 

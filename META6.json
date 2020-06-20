@@ -13,7 +13,6 @@
   "provides": {
     "Sys::Chown": "lib/Sys/Chown.pm6"
   },
-  "resources": [],
   "license": "Artistic-2.0",
-  "source-url": "git@github.com:JJ/raku-sys-chown.git"
+  "source-url": "https://github.com/JJ/raku-sys-chown.git"
 }

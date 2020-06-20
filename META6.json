@@ -6,11 +6,11 @@
     "perl": "6.d",
     "auth": "github:JJ",
     "depends": [
-    "P5getpwnam",
-    "P5getgrnam",
-    "UNIX::Privileges",
-    "File::Stat"
-  ],
+	"P5getpwnam",
+	"P5getgrnam",
+	"UNIX::Privileges",
+	"File::Stat"
+    ],
     "provides": {
 	"Sys::Chown": "lib/Sys/Chown.pm6"
     },

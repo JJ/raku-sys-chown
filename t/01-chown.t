@@ -12,8 +12,11 @@ ok chown([$filename], $user ), 'chown worked (no-op)';
 
 ok chown([$filename], +$*USER, +$*GROUP), "Chown with number works (no-op)";
 ok chown([$filename], +$*USER), "Chown with number works (no-op)";
+ok chown([$filename], +$*USER ~ ":" ~ $*GROUP ),
+        "Chown with semicolon works";
 
 ok chown([$filename], $?FILE.IO), "Chown with ref works";
+
 
 unlink($filename);
 done-testing;

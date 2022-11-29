@@ -1,18 +1,18 @@
 {
     "name": "Sys::Chown",
     "description": "Better chown, ported from Perl's File::Chown",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "authors" : ["JJ Merelo"],
     "perl": "6.d",
-    "auth": "github:JJ",
+    "auth": "zef:jjmerelo",
     "depends": [
-	"P5getpwnam",
-	"P5getgrnam",
-	"UNIX::Privileges:ver<0.1.4+>",
-	"File::Stat"
+	  "P5getpwnam",
+	  "P5getgrnam",
+	  "UNIX::Privileges:ver<0.1.4+>",
+	  "File::Stat"
     ],
     "provides": {
-	"Sys::Chown": "lib/Sys/Chown.pm6"
+	  "Sys::Chown": "lib/Sys/Chown.pm6"
     },
     "license": "Artistic-2.0",
     "source-url": "https://github.com/JJ/raku-sys-chown.git",

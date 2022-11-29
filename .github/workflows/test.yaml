@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/raku-community-modules/raku-test-www:latest
-  steps:
+    steps:
     - name: Obtains source
       uses: actions/checkout@v3
     - name: Cache installed distros

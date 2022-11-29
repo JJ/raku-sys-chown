@@ -4,7 +4,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/raku-community-modules/raku-test-www:latest
+      image: ghcr.io/jj/raku-zef-gha
     steps:
     - name: Obtains source
       uses: actions/checkout@v3

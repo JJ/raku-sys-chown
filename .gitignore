@@ -11,3 +11,5 @@ lib/.precomp
 workspace.xml
 
 .idea
+
+.racoco

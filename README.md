@@ -1,4 +1,4 @@
-# Sys::Chown
+# Sys::Chown [![Test distro](https://github.com/JJ/raku-sys-chown/actions/workflows/test.yaml/badge.svg)](https://github.com/JJ/raku-sys-chown/actions/workflows/test.yaml)
 
 A port of [Perl's File::Chown](https://github.com/perlancar/perl-File-chown
 ) to Raku, using [Lizmat's Butterfly project](https://modules.raku.org/dist/P5built-ins:cpan:ELIZABETH)
@@ -14,15 +14,17 @@ The usual
 
 ```perl6
 use Sys::Chown;
-#Taken verbatim from File::Chown
 
 # chown by user-/group names
-chown "ujang", "ujang", @files;
+chown <foo bar baz>, "ujang", "ujang";
 # numeric ID's still work
-chown -1, 500, "myfile.txt";
+chown ["myfile.txt"], -1, 500;
 # option: use a reference file's owner/group instead of specifying directly,
 # like the Unix chown command's --reference=FILE.
-chown({ref => "/etc/passwd"}, "mypasswd");
+chown(["mypasswd"], {ref => "/etc/passwd"} );
+
+chown(<foo bar>, "1001:1001");
+
 ```
 
 

@@ -14,7 +14,7 @@ jobs:
       with:
         path: ~/.raku/
         key: ${{ runner.os }}-${{ hashFiles('META6.json') }}
-    - name: Insalls if needed
+    - name: Installs if needed
       if: steps.meta6.outputs.cache-hit != 'true'
       run: zef install --deps-only .
     - name: Test and install for more tests

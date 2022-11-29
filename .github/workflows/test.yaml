@@ -1,8 +1,21 @@
-name: Test-install distro
+name: Test distro
 on: [ push, pull_request ]
 jobs:
   test:
     runs-on: ubuntu-latest
-    steps:
-      - name: Test via install
-        uses: JJ/raku-test-action@v2
+    container:
+      image: ghcr.io/raku-community-modules/raku-test-www:latest
+  steps:
+    - name: Obtains source
+      uses: actions/checkout@v3
+    - name: Cache installed distros
+      uses: actions/cache@v3
+      id: meta6
+      with:
+        path: ~/.raku/
+        key: ${{ runner.os }}-${{ hashFiles('META6.json') }}
+    - name: Insalls if needed
+      if: steps.meta6.outputs.cache-hit != 'true'
+      run: zef install --deps-only .
+    - name: Test and install for more tests
+      run: zef test .

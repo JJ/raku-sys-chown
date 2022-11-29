@@ -2,7 +2,7 @@ use Test;
 use Sys::Chown;
 use File::Stat <stat>;
 
-my $filename = '01-noroot';
+my $filename = '/tmp/01-noroot';
 spurt($filename, "'twas brillig and the slithy toves\n");
 
 my $user = ~$*USER;

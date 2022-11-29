@@ -2,7 +2,8 @@ use Test;
 use Sys::Chown;
 use File::Stat <stat>;
 
-my $filename = '/tmp/01-noroot';
+my $filename = %*ENV<GITHUB_ACTIONS> ?? '/home/raku/01-noroot'
+        !! '/tmp/01-noroot';
 spurt($filename, "'twas brillig and the slithy toves\n");
 
 my $user = ~$*USER;
